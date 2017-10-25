@@ -25,11 +25,10 @@ RUN cd /home/chaincoin && \
     make && \
     strip src/chaincoind && \
     strip src/chaincoin-cli && \
-    strip src/chaincoin-tx && \
-    mv src/chaincoind src/chaincoin-cli src/chaincoin-tx /home/chaincoin/bin && \
+    mv src/chaincoind src/chaincoin-cli /home/chaincoin/bin && \
     rm -rf /home/chaincoin/chaincoind
     
-EXPOSE 4854 4855
+EXPOSE 11994 11995
 
 #VOLUME ["/home/chaincoin/.chaincoin"]
 
@@ -42,10 +41,8 @@ RUN chmod 777 /entrypoint.sh && \
     echo "Chaincoin (CHC) Cryptocoin Daemon\n\nUsage:\n chaincoin-cli help - List help options\n chaincoin-cli listtransactions - List Transactions\n\n" > /etc/motd && \
     chmod 755 /home/chaincoin/bin/chaincoind && \
     chmod 755 /home/chaincoin/bin/chaincoin-cli && \
-    chmod 755 /home/chaincoin/bin/chaincoin-tx && \
     mv /home/chaincoin/bin/chaincoind /usr/bin/chaincoind && \
-    mv /home/chaincoin/bin/chaincoin-cli /usr/bin/chaincoin-cli && \
-    mv /home/chaincoin/bin/chaincoin-tx /usr/bin/chaincoin-tx 
+    mv /home/chaincoin/bin/chaincoin-cli /usr/bin/chaincoin-cli
 
 COPY node-status.sh /usr/bin/node-status
 
