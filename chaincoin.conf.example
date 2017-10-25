@@ -1,0 +1,13 @@
+
+#daemon=1
+rpcuser=eternityrpc
+rpcpassword=CHANGE_PASSWORD
+server=1
+listen=1
+txindex=1
+#txindex will record every transaction from the blockchain to your offline db
+#it's an optional thing. It takes a lot longerr to sync that way 0 if you don't care
+rpcport=4854
+port=4855
+rpcallowip=127.0.0.1
+

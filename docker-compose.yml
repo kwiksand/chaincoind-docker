@@ -1,0 +1,9 @@
+---
+daemon:
+#  build: .
+  image: quay.io/kwiksand/chaincoind:latest
+  ports:
+   - "11994:11994"
+   - "11995:11995"
+  volumes:
+   - /media/crypto/eternity:/home/chaincoin/.chaincoin
