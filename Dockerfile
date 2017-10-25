@@ -18,7 +18,7 @@ RUN cd /home/chaincoin && \
     chmod 700 .ssh && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
     ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts && \
-    git clone --branch $DAEMON_RELEASE https://github.com/chaincoin-group/chaincoin.git chaincoind && \
+    git clone --branch $DAEMON_RELEASE https://github.com/chaincoin/chaincoin.git chaincoind && \
     cd /home/chaincoin/chaincoind && \
     ./autogen.sh && \
     ./configure LDFLAGS="-L/home/chaincoin/db4/lib/" CPPFLAGS="-I/home/chaincoin/db4/include/" && \
