@@ -2,11 +2,11 @@ FROM quay.io/kwiksand/cryptocoin-base:latest
 
 RUN useradd -m chaincoin
 
-ENV DAEMON_RELEASE="v0.9.3.2"
+ENV DAEMON_RELEASE="v0.9.3.3"
 ENV E_COIN_CURRENCY="chaincoin"
 ENV E_COIN_SYMBOL="CHC"
 ENV E_COIN_DAEMON="/usr/bin/chaincoin-cli -conf=/home/chaincoin/.chaincoin/chaincoin.conf"
-ENV E_GET_BLOCKCOUNT='/usr/bin/curl -s http://104.238.153.140:3001/api/getblockcount' 
+ENV E_GET_BLOCKCOUNT='/usr/bin/curl -s https://explorer.chaincoin.org/api/getblockcount' 
 ENV E_MASTERNODE_CONF="chaincoinnode"
 ENV CHAINCOIN_DATA=/home/chaincoin/.chaincoin
 
